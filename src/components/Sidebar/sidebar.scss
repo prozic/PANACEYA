@@ -1,0 +1,22 @@
+.sidebar{
+  display: flex;
+  flex-direction: column;
+  border-right: 7px solid  #7c211f;;
+  padding-right: 30px;
+}
+
+.answer{
+  margin-top: 100px;
+  span{
+    font-weight: bold;
+    color: rgb(43, 39, 39);
+    font-size: 1.2rem;
+  }
+  font-style: normal;
+  font-weight: 300;
+  color:#9f9696
+}
+
+input[type=file]{
+  display: none;
+}
