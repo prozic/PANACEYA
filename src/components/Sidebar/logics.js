@@ -31,7 +31,7 @@ export const loadImage = (e, fake = false) => {
 
 }
 else{
-  setTimeout(() => {
+ 
     let img = new Image();  // Создание нового объекта изображения
     img.src = fakeImg;
     img.onload = () => {
@@ -44,7 +44,7 @@ else{
         760, 450
       );
     };
-  }, 1000);
+ 
   
 }
 

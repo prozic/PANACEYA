@@ -11,15 +11,18 @@ const Sidebar = () => {
   };
 
   const result = (e, show) => {
-    loadImage(e, true)
-    setShow(prev => !prev)
-
-    if(!show){
-      setShowWithOtek(false)
-    }
-    else{
-      setShowWithOtek(true)
-    }
+    setTimeout(() => {
+      loadImage(e, true)
+      setShow(prev => !prev)
+  
+      if(!show){
+        setShowWithOtek(false)
+      }
+      else{
+        setShowWithOtek(true)
+      }
+    }, 1000)
+   
   }
 
   const imageRef = useRef()
