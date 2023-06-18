@@ -10,13 +10,21 @@ const Sidebar = () => {
     
   };
 
-  const result = (e) => {
-    loadImage(e,true)
-    setShow(true)
+  const result = (e, show) => {
+    loadImage(e, true)
+    setShow(prev => !prev)
+
+    if(!show){
+      setShowWithOtek(false)
+    }
+    else{
+      setShowWithOtek(true)
+    }
   }
 
   const imageRef = useRef()
   const [show, setShow] = useState(false)
+  const [showWithOtek, setShowWithOtek] = useState(false)
 
   return (
     <div className="sidebar">
@@ -29,12 +37,17 @@ const Sidebar = () => {
         onChange={(e) => loadImage(e)}
       />
       <Button text='Загрузить снимок' onClick={openImageButton} />
-      <Button text='Узнать результат' onClick={(e) => result(e)} />
+      <Button text='Узнать результат' onClick={(e) => result(e, show)} />
 
       {show && <div className="answer">
         <span>Отёк не обнаружен</span>
         <br/>
         Полученный коэффициент равен 9,7
+      </div>}
+      {showWithOtek && <div className="answer">
+        <span>Отёк обнаружен</span>
+        <br/>
+        Полученный коэффициент равен 10,7
       </div>}
     </div>
   )
