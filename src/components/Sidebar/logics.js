@@ -31,19 +31,23 @@ export const loadImage = (e, fake = false) => {
 
 }
 else{
-  let img = new Image();  // Создание нового объекта изображения
-  img.src = fakeImg;
-  img.onload = () => {
-    let ctx = document.querySelector("#canvas").getContext("2d");
-    ctx.clearRect(0, 0, 760, 450);
-    ctx.drawImage(
-      img,
-      0,
-      0,
-      760, 450
-    );
-  };
+  setTimeout(() => {
+    let img = new Image();  // Создание нового объекта изображения
+    img.src = fakeImg;
+    img.onload = () => {
+      let ctx = document.querySelector("#canvas").getContext("2d");
+      ctx.clearRect(0, 0, 760, 450);
+      ctx.drawImage(
+        img,
+        0,
+        0,
+        760, 450
+      );
+    };
+  }, 1000);
+  
 }
+
 
 
 };
